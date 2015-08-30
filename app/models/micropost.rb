@@ -6,7 +6,6 @@ class Micropost < ActiveRecord::Base
     
     default_scope -> { order('created_at DESC') }   #スコープの指定、新しいものから順に（降順）
     validates :content, presence: true, length: { maximum: 140 }
-    validates :image, presence: true
     validates :user_id, presence: true
     
     def self.from_users_followed_by(user)
